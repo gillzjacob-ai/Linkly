@@ -1,0 +1,67 @@
+import type { MatchPartner } from '../types';
+
+export const MOCK_PARTNERS: MatchPartner[] = [
+  {
+    id: 'p1',
+    name: 'Avery Chen',
+    age: 29,
+    genderIdentity: 'woman',
+    bio: 'Product designer who loves improv, indoor climbing, and ramen crawls.',
+    avatarSeed: 'avery-chen',
+    verified: true,
+    distance: 4,
+    interests: ['Design', 'Climbing', 'Comedy'],
+  },
+  {
+    id: 'p2',
+    name: 'Jordan Brooks',
+    age: 31,
+    genderIdentity: 'man',
+    bio: 'Marketing strategist, part-time DJ, obsessed with street tacos and Formula 1.',
+    avatarSeed: 'jordan-brooks',
+    verified: false,
+    distance: 7,
+    interests: ['Music', 'Motorsport', 'Food'],
+  },
+  {
+    id: 'p3',
+    name: 'Riley Patel',
+    age: 27,
+    genderIdentity: 'non-binary',
+    bio: 'XR engineer with a soft spot for bookstores, urban gardening, and badminton.',
+    avatarSeed: 'riley-patel',
+    verified: true,
+    distance: 3,
+    interests: ['XR', 'Gardening', 'Books'],
+  },
+  {
+    id: 'p4',
+    name: 'Morgan Lee',
+    age: 33,
+    genderIdentity: 'woman',
+    bio: 'Community organizer, cyclist, latte art tinkerer.',
+    avatarSeed: 'morgan-lee',
+    verified: true,
+    distance: 11,
+    interests: ['Cycling', 'Coffee', 'Volunteering'],
+  },
+  {
+    id: 'p5',
+    name: 'Casey Hall',
+    age: 30,
+    genderIdentity: 'man',
+    bio: 'Software architect, board game night host, avid hiker.',
+    avatarSeed: 'casey-hall',
+    verified: true,
+    distance: 9,
+    interests: ['Board Games', 'Hiking', 'Tech'],
+  },
+];
+
+export const ICEBREAKERS = [
+  'If you could teleport for a day, where would you drop in first?',
+  'What tiny thing instantly improves your day?',
+  'Which fictional world would you spend a week exploring?',
+  "What's the best spur-of-the-moment decision you've ever made?",
+  'What underrated local spot would you take every visitor to?',
+];
