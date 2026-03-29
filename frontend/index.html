@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clustor Frontend</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Clustor</h1>
+      <p>Supervised multi-agent workspace</p>
+    </div>
+    <div class="api-config">
+      <label for="apiBase">API</label>
+      <input id="apiBase" value="http://localhost:8000" />
+    </div>
+  </header>
+
+  <main class="grid">
+    <section class="card canvas-card">
+      <div class="section-head">
+        <h2>Spatial Canvas</h2>
+        <span id="clusterStatus" class="chip assigned">Assigned</span>
+      </div>
+      <div id="canvas" class="canvas">
+        <div class="core-node">Clustor Core</div>
+      </div>
+      <div class="legend">
+        <span><i class="dot assigned"></i>Assigned</span>
+        <span><i class="dot working"></i>Working</span>
+        <span><i class="dot complete"></i>Complete</span>
+        <span><i class="dot failed"></i>Failed</span>
+      </div>
+    </section>
+
+    <section class="card run-card">
+      <h2>Supervisor Console</h2>
+      <form id="runForm" class="run-form">
+        <textarea id="prompt" rows="5" placeholder="Delegate work to the cluster...">Research pricing and positioning for Clustor vs Manus and OpenClaw, then draft launch recommendations.</textarea>
+        <div class="actions">
+          <button id="runBtn" type="submit">Run Task</button>
+          <button id="clearBtn" type="button" class="ghost">Clear</button>
+        </div>
+      </form>
+      <div class="metrics">
+        <div><label>Job ID</label><strong id="jobId">-</strong></div>
+        <div><label>Messages</label><strong id="msgCount">0</strong></div>
+        <div><label>Activity</label><strong id="actCount">0</strong></div>
+        <div><label>Artifacts</label><strong id="artifactCount">0</strong></div>
+      </div>
+    </section>
+
+    <section class="card thread-card">
+      <h2>Agent Thread</h2>
+      <div id="thread" class="stream"></div>
+    </section>
+
+    <section class="card activity-card">
+      <h2>Activity Rail</h2>
+      <div id="activity" class="stream"></div>
+    </section>
+
+    <section class="card artifacts-card">
+      <h2>Artifacts</h2>
+      <div id="artifacts" class="stream"></div>
+    </section>
+  </main>
+
+  <template id="threadItemTemplate">
+    <article class="item message-item">
+      <header>
+        <span class="role">Agent</span>
+        <time></time>
+      </header>
+      <p></p>
+    </article>
+  </template>
+
+  <template id="activityItemTemplate">
+    <article class="item activity-item">
+      <header>
+        <strong class="name"></strong>
+        <time></time>
+      </header>
+      <pre class="payload"></pre>
+    </article>
+  </template>
+
+  <template id="artifactItemTemplate">
+    <article class="item artifact-item">
+      <header>
+        <strong class="artifact-name"></strong>
+        <time></time>
+      </header>
+      <p class="artifact-kind"></p>
+    </article>
+  </template>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
